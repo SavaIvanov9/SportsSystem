@@ -1,5 +1,4 @@
-﻿
-namespace SportSystem.Data
+﻿namespace SportSystem.Data
 {
     using Repositories;
 

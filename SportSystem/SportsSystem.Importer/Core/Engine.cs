@@ -72,8 +72,6 @@
 
             Console.WriteLine("Started seeding data...");
 
-            //int addedElements = 0;
-
             var seedManager = new SeedManager();
             seedManager.SeedData(sports, typeof(Sport));
             

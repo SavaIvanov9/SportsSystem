@@ -21,7 +21,7 @@
             this._type = type;
             this._startIndex = startIndex;
             this._elementsToProcessCount = elementsToProcessCount;
-            _db = new SportSystemData();
+            this._db = new SportSystemData();
         }
 
         public object Data
@@ -51,7 +51,6 @@
             {
                 GenerateSports();
             }
-
         }
 
         private void GenerateOdds()
@@ -230,8 +229,8 @@
                 var events = new List<Event>();
                 var eventsNodes = _data[i].ChildNodes;
 
-                var seedManager1 = new SeedManager();
-                var newSports = seedManager1.SeedData(eventsNodes, typeof(Event)) as IEnumerable<Event>;
+                var seedManager = new SeedManager();
+                var newSports = seedManager.SeedData(eventsNodes, typeof(Event)) as IEnumerable<Event>;
                 if (newSports != null) events.AddRange(newSports);
 
                 Console.WriteLine($"index: {i}, name: {name}, Id: {id}");
